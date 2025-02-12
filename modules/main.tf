@@ -252,8 +252,3 @@ resource "local_file" "airflow_release_note" {
   content = helm_release.airflow.metadata[0].notes
   depends_on = [ helm_release.airflow ]
 }
-
-output "test" {
-    value = jsondecode(jsonencode(helm_release.airflow.set))
-    sensitive = true
-}
